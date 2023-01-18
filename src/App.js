@@ -1,10 +1,13 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
-  const [sessionTimer, setSessionTimer] = useState(25);
+  const [sessionTimer, setSessionTimer] = useState(3);
+  const [isRunning, setIsRunning] = useState(false);
+
+  console.log(isRunning);
 
   const increase = (state, setState) => {
     if (state < 60) {
@@ -17,6 +20,22 @@ function App() {
       setState(state - 1);
     }
   };
+
+  const timerToggle = () => {
+    setIsRunning(!isRunning);
+  };
+
+  useEffect(() => {
+    let interval = null;
+    if (isRunning) {
+      interval = setInterval(() => {
+        decrease(sessionTimer, setSessionTimer);
+      }, 1000);
+    } else if (!isRunning && sessionTimer !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isRunning, sessionTimer]);
 
   return (
     <div className="App">
@@ -38,6 +57,8 @@ function App() {
       </div>
       <h1>Session</h1>
       <h2>{sessionTimer}</h2>
+      <button onClick={timerToggle}>START</button>
+      <button onClick={() => setSessionTimer(3)}>RESET</button>
     </div>
   );
 }
