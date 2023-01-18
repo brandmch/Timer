@@ -13,10 +13,31 @@
   color: #ffffff;
 }
 
-button {
-  background-color: #ffffff;
+.adjustment-container {
+  display: flex;
+  align-items: center;
 }
 
-.scene {
+.adjustment-container > h2 {
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+.flex {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.break-length-container {
+  width: 25vw;
+}
+
+.session-length-container {
+  width: 25vw;
+}
+
+button {
+  background-color: #ffffff;
 }
