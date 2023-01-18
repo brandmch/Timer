@@ -53,42 +53,46 @@ function App() {
 
   return (
     <div className="App">
-      <div className="stopwatch border">
+      <div className="stopwatch">
         <div className="adjustment-container">
           <div className="break-length-container flex border">
             <h2>Break Length</h2>
             <div className="adjustment-container">
-              <FaArrowUp
-                className="fa"
-                onClick={() => setBreakLength(breakLength + 1)}
-              />
-              <h1>{breakLength}</h1>
-              <FaArrowDown
-                className="fa"
-                onClick={() => setBreakLength(breakLength - 1)}
-              />
+              <div className="white">
+                <FaArrowUp
+                  className="fa"
+                  onClick={() => setBreakLength(breakLength + 1)}
+                />
+                <h1>{breakLength}</h1>
+                <FaArrowDown
+                  className="fa"
+                  onClick={() => setBreakLength(breakLength - 1)}
+                />
+              </div>
             </div>
           </div>
           <div className="session-length-container flex border">
             <h2>Session Length</h2>
             <div className="adjustment-container">
-              <FaArrowUp
-                className="fa"
-                onClick={() => {
-                  setSessionLength(sessionLength + 1);
-                  setSessionTimer({ minutes: sessionLength + 1, seconds: 0 });
-                  setIsRunning(false);
-                }}
-              />
-              <h1>{sessionLength}</h1>
-              <FaArrowDown
-                className="fa"
-                onClick={() => {
-                  setSessionLength(sessionLength - 1);
-                  setSessionTimer({ minutes: sessionLength - 1, seconds: 0 });
-                  setIsRunning(false);
-                }}
-              />
+              <div className="white">
+                <FaArrowUp
+                  className="fa"
+                  onClick={() => {
+                    setSessionLength(sessionLength + 1);
+                    setSessionTimer({ minutes: sessionLength + 1, seconds: 0 });
+                    setIsRunning(false);
+                  }}
+                />
+                <h1>{sessionLength}</h1>
+                <FaArrowDown
+                  className="fa"
+                  onClick={() => {
+                    setSessionLength(sessionLength - 1);
+                    setSessionTimer({ minutes: sessionLength - 1, seconds: 0 });
+                    setIsRunning(false);
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
