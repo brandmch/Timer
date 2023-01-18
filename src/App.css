@@ -21,9 +21,10 @@
 .stopwatch {
   width: 50vw;
   display: flex;
+  border-radius: 10vh;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 1vw 5vh 1vw;
+  padding: 7vh 5vw 7vh 5vw;
 }
 
 .adjustment-container {
@@ -46,16 +47,21 @@
 }
 
 .break-length-container {
-  width: 25vw;
+  padding: 2vh 0.5vw 1vh 0.5vw;
+  width: 22vw;
+  margin-right: 1.5vw;
 }
 
 .session-length-container {
-  width: 25vw;
+  padding: 2vh 0.5vw 1vh 0.5vw;
+  margin-left: 1.5vw;
+  width: 22vw;
 }
 
 .timer-container {
   width: 30vw;
   padding: 2vh 1vw 2vh 1vw;
+  margin-top: 3vh;
 }
 
 .timer {
